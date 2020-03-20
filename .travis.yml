@@ -1,0 +1,36 @@
+# arch: s390x
+dist: xenial
+# addons:
+#   postgresql: "11"
+# language: elixir
+# group: dev
+# language: erlang
+# arch: ppc64le
+arch: amd64
+
+rvm:
+# - 2.6.5
+- 2.6.4
+- 2.6.3
+- 2.6.2
+- 2.6.1
+- 2.5.3
+- 2.7.0
+
+# cache: bundler
+
+install: skip
+
+script:
+- uname -a
+- ps auxfw
+- ruby -v
+- df -h
+# - php -v
+- __dots() { while true ; do echo -en . ; sleep 30 ; done } ; __dots &
+- sleep 300
+# - uname -a
+# - ruby -v
+# - gem env
+# - gem list
+# - sudo gem list
